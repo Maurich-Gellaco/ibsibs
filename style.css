@@ -1,0 +1,173 @@
+/* Set the colour and the position of the background and the elements */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('flower.gif') center center fixed; /* Replace 'your-gif-image.gif' with the actual file name */
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+}
+.bib {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+/* Style the envelope and the card */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #427c9b;
+}
+
+.envelope:before {
+  background-color: #336bae;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+/* ... (previous code) ... */
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 275px; /* Adjust the width as needed */
+  height: 180px; /* Adjust the height as needed */
+  top: 10px;
+  left: 10px;
+  border-radius: 10%;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+}
+.card img {
+  width: 18%; /* Adjust the width as needed */
+  height: 25%; /* Maintain aspect ratio */
+  display: block;
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  border-radius: 50%; /* Make the image rounded */
+}
+.card .text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 30px; /* Adjust the font size as needed */
+  text-align: center;
+  line-height: 20px; /* Adjust the line height as needed */
+  top: 15px;
+  left: 40px; /* Adjust the left position as needed */
+  color: #0e354a;
+}
+
+.paragraph {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 16px; /* Adjust the font size as needed */
+  text-align: center;
+  color: #317397;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-top: 60px; /* Adjust the margin as needed */
+  width: 100%;
+}
+
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 110px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+.front {
+  position: absolute;
+  border-right: 180px solid #6469cc;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #4c50a0;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Add the shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 250px;
+  left: 650px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+/* To move the envelope up and down */
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* to scale the shadow */
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
